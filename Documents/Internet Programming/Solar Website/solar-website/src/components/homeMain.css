@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+
+/* *{
+    font-family: Roboto,Helvetica Neue,sans-serif;
+} */
+/* 
+.first-info::before{
+    background: url('./pic4.jpg') no-repeat center/cover;
+    background-color: black;
+    content: ".";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    opacity: 0.5;
+} */
+
+.first-info{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Boogaloo', cursive;
+    font-size: 35px;
+    margin-top: 25px;
+    margin-bottom: 100px;
+    color: rgb(216, 202, 13);
+    border-radius: 500px;
+    background-color: rgb(48, 39, 39);
+    padding: 45px;
+    
+    
+
+}
+
+#top-info{
+   width: 50%;
+   margin-left: 60px;
+
+}
+
+.first-info img{
+    width: 400px;
+    height: auto;
+    margin-left: 120px;
+    margin-top: 25px;
+}
+
+.second-info{
+    background-color: rgb(246,246,246);
+}
+.second-info h4 b{
+    color: red;
+}
+#ques1{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+
+}
+
+
+.second-info img{
+    width:850px;
+
+}
+
+.inner-info{
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+}
+.inner-info img{
+    width: 550px;
+    margin-right: 100px;
+}
+
+#ques2{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 45px;
+    font-size: 1.2rem;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+.card{
+    width: 400px;
+    padding: 20px;
+    margin: auto;
+    border-radius: 5px;
+
+}
+
+.card img{
+    width: 150px;
+    height: auto;
+    margin: auto;
+   
+}
+
+ #card1,#card3{
+    margin-right: 10px;
+}
+#card2,#card4{
+    margin-left: 10px;
+}
+
+.card-title{
+    font-size: 27px;
+    font-weight: bold;
+    color: orange;
+}
+.card-text{
+    color: #696969;
+    font-weight:600;
+}
+
+#calc{
+    background-color: orange;
+    
+    margin: 45px;
+    outline: none;
+    border-radius: 8px;
+    width: 250px;
+    height: 2.9rem;
+    font-weight: bold;
+    font-size: 20px;
+}
+#calc a{
+    text-decoration: none;
+    color: black; 
+}
+#calc a:hover{
+  
+  color: white;
+
+}
+
+h2{
+    margin-top: 100px;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+h3{
+   color: #696969;
+   font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+.stories{
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: grid; 
+    grid-template-areas: 'head head sunimg'
+    'p p sunimg'
+    'img img img'
+    'op op op';
+}
+
+.stories:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.stories span{
+    grid-area: op;
+    font-size: 18px;
+    width: 100%;
+}
+.storypics{
+    grid-area: img;
+    width: 300px;
+    height: 190px;
+}
+.sun{
+    grid-area: sunimg;
+    /* width: 30px; */
+    height: 40px;
+}
+
+.stories p{
+    grid-area: p;
+    left: 0px;
+}
+
+.stories h4{
+    grid-area: head;
+    float: left;
+    opacity: 0.8;
+}
+
+.stories button{
+    margin: 10px;
+    border: none;
+    background-color: white;
+    color: rgb(25, 102, 133);
+}
+
+
+
+
+
+
+
+
+

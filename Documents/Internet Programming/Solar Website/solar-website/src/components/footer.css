@@ -1,0 +1,87 @@
+footer::before{
+    background: url('./bgsolar.jpg') no-repeat center/cover;
+    /* background-color: black; */
+    content: ".";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    margin-top: 150px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+
+footer{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    /* flex-direction: row; */
+    /* background-color: black; */
+    /* color: white; */
+    /* font-weight: bold; */
+    grid-template-areas: 'address follow contactus'
+    'disclaimer disclaimer disclaimer';
+}
+
+.foot{
+    grid-area: foot;
+    margin: 70px;
+    margin-top: 150px;
+
+    /* border: 2px solid black; */
+
+}
+#address{
+    grid-area: address;
+}
+#follow{
+    grid-area: follow;
+}
+#contactus{
+    grid-area: contactus;
+}
+
+#follow i{
+    margin: 8px;
+    width: 16px;
+    height: 16px;
+}
+#follow i:hover{
+    cursor: pointer;
+    /* color: blue; */
+    transform: scale(2);
+}
+.fa-facebook:hover{
+    color: blue;
+}
+.fa-twitter:hover{
+    color: rgb(31, 171, 226);
+}
+.fa-google-plus:hover{
+    color: red;
+}
+.fa-linkedin-square:hover{
+    color: rgb(96, 96, 219);
+}
+.fa-youtube-play:hover{
+    color: red;
+}
+.fa-instagram:hover{
+    color: rgb(248, 8, 148);
+}
+footer h6{
+    text-align: center;
+    font-weight: bold;
+}
+#disclaimer{
+    grid-area: disclaimer;
+}
+#disclaimer a{
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+#disclaimer a:hover{
+   color: rgb(243, 0, 0);
+}
