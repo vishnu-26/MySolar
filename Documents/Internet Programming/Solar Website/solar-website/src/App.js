@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,41 +10,46 @@ import Navbar from './components/Navbar';
 import HomeMain from './components/HomeMain';
 import Footer from './components/Footer';
 import SolarCalc from './components/SolarCalc';
-
-
-
+import Shop from './components/Shop';
+import About from './components/About';
+import AllState from './Context/MyContextFile'
 
 
 function App() {
 
-  // const [showCalc, setShowCalc] = useState(false);
-
-
+ 
 
   return (
 
     <div className="App">
-      
 
+      <AllState>
       <Router>
-      <Navbar />
+        <Navbar/>
         <Switch>
+        <Route path="/about">
+           <About/>
+         </Route>
+        <Route path="/shop">
+            <Shop/>
+          </Route>
           <Route path="/calculator">
             <SolarCalc />
           </Route>
           <Route path="/">
-            <HomeMain/>
+            <HomeMain />
           </Route>
-          
+         
         </Switch>
         <Footer />
 
-        
+
 
 
 
       </Router>
-      
+      </AllState>
+
     </div>
   );
 }

@@ -4,6 +4,9 @@ import '../App.js'
 import OwlCarousel from 'react-owl-carousel2';
 import 'react-owl-carousel2/lib/styles.css';
 import './homeMain.css';
+import pic4 from './pic4.jpg';
+import pic5 from './pic5.jpg';
+import pic6 from './bgsolar.jpg';
 import cardpic1 from './cardpic1.PNG';
 import cardpic2 from './cardpic2.PNG';
 import cardpic3 from './cardpic3.PNG';
@@ -51,9 +54,7 @@ export default function homeMain() {
     const HandleClick = () =>{
         console.log("i am clicked");
         
-        
-       
-       
+    
     }
     
 
@@ -62,8 +63,43 @@ export default function homeMain() {
 
     return (
         <>
+         <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src={pic4} className="d-block w-100" alt="..." />
+                        <div className="carousel-caption d-none d-md-block">
+                            {/* Write here */}
+                        </div>
+                    </div>
+                    <div className="carousel-item">
+                        <img src={pic5} className="d-block w-100" alt="..." />
+                        <div className="carousel-caption d-none d-md-block">
+                            {/* write here */}
+                        </div>
+                    </div>
+                    <div className="carousel-item">
+                        <img src={pic6} className="d-flex w-100" alt="..." />
+                        <div className="carousel-caption d-none d-md-block">
+                          {/* write here */}
+                        </div>
+                    </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                </button>
+            </div>
         
-            <button id="calc" onClick = {HandleClick} ><Link to="/calculator">Solar Calculator</Link></button>
+        <Link to="/calculator"><button id="calc" onClick = {HandleClick} > Solar Calculator</button></Link>
             <div className="info">
                 <div className="first-info">
                     <p id="top-info">India is on the cusp of a solar revolution and we at MySolar have been right at the forefront, leading the move towards sustainable energy solutions. Investing in rooftop solutions leads to great savings, while protecting the environment. MySolar offers solar rooftop for home. Save and Earn from your idle rooftop space.</p>

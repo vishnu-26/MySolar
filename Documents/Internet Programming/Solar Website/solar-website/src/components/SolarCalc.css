@@ -22,9 +22,9 @@
 }
 
 .modal-content{
-    background-color:rgb(0, 0, 0);
+    /* background-color:rgb(0, 0, 0); */
     width: 750px;
-    color: white;
+    /* color: white; */
 }
 
 .btn-close{
@@ -54,7 +54,22 @@ th,tr{
 .eco-info{
     background-color: lightblue;
     color: black;
-    margin-top: 15px;
+    margin-top: 25px;
+    
+}
+
+.color3{
+    background-color: rgb(60, 151, 75);
+    width: 500px;
+    padding: 10px;
+    color: white;
+}
+.color4{
+    background-color: rgb(60, 151, 75);
+    width: 400px;
+    border-left: 1px solid black;
+    padding: 10px;
+    color: white;
     
 }
 

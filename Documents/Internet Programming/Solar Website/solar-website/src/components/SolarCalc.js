@@ -5,6 +5,11 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import { Link } from 'react-router-dom';
+
+
+
+
 
 const marks = [
     {
@@ -42,7 +47,7 @@ export function DiscreteSliderLabel() {
     return (
         <Box className="Box" sx={{ width: 1000 }}>
             <Slider
-                onChange={(event, scaledValue, step) => console.log(marks[0].scaledValue)}
+               
                 aria-label="Always visible"
                 defaultValue={50}
                 getAriaValueText={valuetext}
@@ -93,14 +98,16 @@ export function ColorToggleButton(props) {
 
 export default function SolarCalc(props) {
 
+    
+
     const [active, setActive] = useState('opt1');
 
     const Option1 = () => {
         return (
             <div>
                 <div className="input-group mb-3 m-5">
-                    <input type="text" className="form-control" placeholder="Enter your Rooftop Area" aria-label=" " aria-describedby="basic-addon2" />
-                    <span className="input-group-text" id="basic-addon2">Sq. Ft</span>
+                    <input required type="text" id="sqft" className="form-control" placeholder="Enter your Rooftop Area" aria-label=" " aria-describedby="basic-addon2" />
+                    <span className="input-group-text" id="rs1">Sq. Ft</span>
                 </div>
 
             </div>
@@ -111,8 +118,8 @@ export default function SolarCalc(props) {
         return (
             <div>
                 <div className="input-group mb-3 m-5">
-                    <input type="text" className="form-control" placeholder="Solar Panel Capacity" aria-label=" " aria-describedby="basic-addon2" />
-                    <span className="input-group-text" id="basic-addon2">KW</span>
+                    <input required type="text" id="kw" className="form-control" placeholder="Solar Panel Capacity" aria-label=" " aria-describedby="basic-addon2" />
+                    <span className="input-group-text" id="rs2">KW</span>
                 </div>
             </div>
         )
@@ -122,12 +129,40 @@ export default function SolarCalc(props) {
         return (
             <div>
                 <div className="input-group mb-3 m-5">
-                    <input type="text" className="form-control" placeholder="Enter your Amount" aria-label=" " aria-describedby="basic-addon2" />
-                    <span className="input-group-text" id="basic-addon2">Rs.</span>
+                    <input required type="text"  id="amount" className="form-control" placeholder="Enter your Amount" aria-label=" " aria-describedby="basic-addon2" />
+                    <span className="input-group-text" id="rs3">Rs.</span>
                 </div>
                 <DiscreteSliderLabel />
             </div>
         )
+    }
+    let val;
+    const handleCalculate = () =>{
+        
+        if(active === 'opt1')
+        {
+         val = document.getElementById('sqft').value;
+        
+        console.log(val);
+        document.getElementById('plantSize').innerHTML = (val+' kW '); 
+      
+        
+        }
+        if(active === 'opt2')
+        {
+         val = document.getElementById('kw').value;
+       
+        console.log(val);
+        document.getElementById('plantSize').innerHTML = (val+' kW '); 
+        
+        }
+        if(active === 'opt3')
+        {
+         val = document.getElementById('amount').value;
+        console.log(val);
+        document.getElementById('plantSize').innerHTML = (val+' kW '); 
+        
+        }
     }
 
 
@@ -136,7 +171,7 @@ export default function SolarCalc(props) {
 
     return (
         <div>
-            <h1>Solar Rooftop Calculator</h1>
+            <h1 className="m-5" style={{backgroundImage: 'linear-gradient(yellow,orange)',padding:'15px'}}>Solar Rooftop Calculator</h1>
 
             <div className="container">
                 <b className="head1">1. Choose any one of the following :</b>
@@ -160,11 +195,11 @@ export default function SolarCalc(props) {
 
 
 
-                <button type="button" className="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="submit" className="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick = {handleCalculate} >
                     Calculate
                 </button>
 
-                <div className="modal fade Calc-content" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade Calc-content" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -184,7 +219,7 @@ export default function SolarCalc(props) {
                                         </tr>
                                         <tr>
                                             <td className="color1" id="labelChange">Feasible Plant size as per your Capacity :</td>
-                                            <td className="color2">9.3kW</td>
+                                            <td className="color2" id="plantSize">kW</td>
 
                                         </tr>
                                         <tr>
@@ -241,15 +276,25 @@ export default function SolarCalc(props) {
                                     </table>
                                 </div>
                                 <div className=" eco-info" >
+                                    <table>
+                                    <tbody>
                                     <tr>
-                                        <td > Life-Time (25 years) :</td>
-                                        <td >Rs. 2790000</td>
+                                        <td className="color3">
+                                            Carbon dioxide emissions mitigated is</td>
+                                        <td className="color4">3075 tonnes.</td>
                                     </tr>
+                                    <tr>
+                                        <td className="color3">
+                                        This installation will be equivalent to planting</td>
+                                        <td className="color4">	4920 Teak trees over the life time. </td>
+                                    </tr>
+                                    </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Let's SHOP &rarr;</button>
+                                <Link to="/shop"><button type="button" data-bs-dismiss="modal" className="btn btn-primary">Let's SHOP &rarr;</button></Link>
                             </div>
                         </div>
                     </div>
