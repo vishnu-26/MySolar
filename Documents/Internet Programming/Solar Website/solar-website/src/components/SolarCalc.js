@@ -1,11 +1,12 @@
 // import React from 'react';
 import './SolarCalc.css';
-import React, { useState } from 'react';
+import React, { useState,useEffect ,useContext} from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { Link } from 'react-router-dom';
+import { myContext } from '../Context/MyContextFile';
 
 
 
@@ -39,6 +40,8 @@ const marks = [
     },
 ];
 
+
+
 function valuetext(scaledValue) {
     return `${scaledValue}Rs`;
 }
@@ -67,7 +70,7 @@ export function ColorToggleButton(props) {
         setAlignment(newAlignment);
     };
 
-
+   
 
 
 
@@ -101,39 +104,48 @@ export default function SolarCalc(props) {
     
 
     const [active, setActive] = useState('opt1');
+    
+
+    useEffect(() => {
+        // props.setProgress(30);
+        props.setProgress(100);
+        // props.setProgress(0);
+        console.log("UseEffect from Calc = "+props.progress);
+        
+      },[]);
 
     const Option1 = () => {
         return (
-            <div>
+            <form>
                 <div className="input-group mb-3 m-5">
-                    <input required type="text" id="sqft" className="form-control" placeholder="Enter your Rooftop Area" aria-label=" " aria-describedby="basic-addon2" />
+                    <input required type="text" id="sqft" className="form-control" placeholder="Enter your Rooftop Area" aria-label=" " aria-describedby="basic-addon2" required />
                     <span className="input-group-text" id="rs1">Sq. Ft</span>
                 </div>
 
-            </div>
+            </form>
         )
     }
 
     const Option2 = () => {
         return (
-            <div>
+            <form>
                 <div className="input-group mb-3 m-5">
-                    <input required type="text" id="kw" className="form-control" placeholder="Solar Panel Capacity" aria-label=" " aria-describedby="basic-addon2" />
+                    <input required type="text" id="kw" className="form-control" placeholder="Solar Panel Capacity" aria-label=" " aria-describedby="basic-addon2" required />
                     <span className="input-group-text" id="rs2">KW</span>
                 </div>
-            </div>
+            </form>
         )
     }
 
     const Option3 = () => {
         return (
-            <div>
+            <form>
                 <div className="input-group mb-3 m-5">
-                    <input required type="text"  id="amount" className="form-control" placeholder="Enter your Amount" aria-label=" " aria-describedby="basic-addon2" />
+                    <input required type="text"  id="amount" className="form-control" placeholder="Enter your Amount" aria-label=" " aria-describedby="basic-addon2" required />
                     <span className="input-group-text" id="rs3">Rs.</span>
                 </div>
                 <DiscreteSliderLabel />
-            </div>
+            </form>
         )
     }
     let val;
@@ -144,7 +156,9 @@ export default function SolarCalc(props) {
          val = document.getElementById('sqft').value;
         
         console.log(val);
-        document.getElementById('plantSize').innerHTML = (val+' kW '); 
+        document.getElementById('plantSize').innerHTML = ((val*0.01).toFixed(2)+' kW '); 
+        document.getElementById('withoutSubsidy').innerHTML = ('Rs.'+(val*0.01*41000).toFixed(2));
+        document.getElementById('withSubsidy').innerHTML = ('Rs.'+((val*0.01*41000)*(40/100)).toFixed(2));
       
         
         }
@@ -154,6 +168,8 @@ export default function SolarCalc(props) {
        
         console.log(val);
         document.getElementById('plantSize').innerHTML = (val+' kW '); 
+        document.getElementById('withoutSubsidy').innerHTML = ('Rs.'+(val*41000).toFixed(2));
+        document.getElementById('withSubsidy').innerHTML = ('Rs.'+((val*41000)*(40/100)).toFixed(2));
         
         }
         if(active === 'opt3')
@@ -194,10 +210,11 @@ export default function SolarCalc(props) {
 
 
 
-
+                
                 <button type="submit" className="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick = {handleCalculate} >
                     Calculate
                 </button>
+                
 
                 <div className="modal fade Calc-content" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
@@ -234,12 +251,12 @@ export default function SolarCalc(props) {
                                         </tr>
                                         <tr>
                                             <td className="color1"> Without subsidy (Based on current MNRE benchmark) :</td>
-                                            <td className="color2">	Rs. 381300 </td>
+                                            <td className="color2" id='withoutSubsidy'></td>
 
                                         </tr>
                                         <tr>
                                             <td className="color1">With subsidy <b>40% upto 3kW & 20% above 3kW upto 10kW</b> (Based on current MNRE benchmark)</td>
-                                            <td className="color2">Rs. 280440</td>
+                                            <td className="color2" id='withSubsidy'></td>
                                         </tr>
                                         <tr>
                                             <th className="color1">3. Total Electricity Generation from Solar Plant :</th>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,11 +13,17 @@ import SolarCalc from './components/SolarCalc';
 import Shop from './components/Shop';
 import About from './components/About';
 import AllState from './Context/MyContextFile'
+import LoadingBar from 'react-top-loading-bar'
+import Cart from './components/Cart';
+import { myContext } from './Context/MyContextFile';
 
 
 function App() {
 
+  
+  const [progress, setProgress] = useState(0);
  
+
 
   return (
 
@@ -26,26 +32,31 @@ function App() {
       <AllState>
       <Router>
         <Navbar/>
+        <LoadingBar
+        color='#f11946'
+        progress={progress}
+        
+      />
         <Switch>
+          
+        <Route path="/Cart">
+           <Cart progress={progress} setProgress={setProgress} />
+         </Route>
         <Route path="/about">
-           <About/>
+           <About progress={progress} setProgress={setProgress}/>
          </Route>
         <Route path="/shop">
-            <Shop/>
+            <Shop progress={progress} setProgress={setProgress}/>
           </Route>
           <Route path="/calculator">
-            <SolarCalc />
+            <SolarCalc  progress={progress} setProgress={setProgress}/>
           </Route>
           <Route path="/">
-            <HomeMain />
+            <HomeMain  progress={progress} setProgress={setProgress}/>
           </Route>
          
         </Switch>
         <Footer />
-
-
-
-
 
       </Router>
       </AllState>

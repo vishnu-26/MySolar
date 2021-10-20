@@ -1,5 +1,5 @@
-import React from 'react'
-import { Router,Link } from 'react-router-dom';
+import React,{useEffect,useContext} from 'react'
+import {Link } from 'react-router-dom';
 import '../App.js'
 import OwlCarousel from 'react-owl-carousel2';
 import 'react-owl-carousel2/lib/styles.css';
@@ -27,8 +27,6 @@ import sp9 from './sp9.jpg';
 import sun from './sun.PNG';
 
 
-
-
 const options = {
     items: 5,
     autoplay: true,
@@ -48,14 +46,22 @@ const events = {
 
 
 
-export default function homeMain() {
-    
+export default function HomeMain(props) {
+
 
     const HandleClick = () =>{
         console.log("i am clicked");
         
     
     }
+    useEffect(() => {
+        props.setProgress(30);
+        props.setProgress(100);
+        props.setProgress(0);
+        
+    }, [])
+  
+    
     
 
 
@@ -73,19 +79,19 @@ export default function homeMain() {
                     <div className="carousel-item active">
                         <img src={pic4} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            {/* Write here */}
+                        Turn up the brightness,turn up the Solar Power.
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={pic5} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            {/* write here */}
+                        Use the Sun, because it is FREE!
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={pic6} className="d-flex w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                          {/* write here */}
+                        Solar Energy: A Bright Alternative.
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,32 @@
-import React from 'react';
+import React,{useEffect,useContext} from 'react';
 import './Navbar.css';
 import aboutpic from './about.PNG'
+import { myContext } from '../Context/MyContextFile';
 
-export default function About() {
+
+
+
+export default function About(props) {
+
+   
+        
+       
+        useEffect(() => {
+            setTimeout(() => {
+                props.setProgress(50);
+                props.setProgress(100);
+            }, 500);
+           
+            console.log("HELLO from About Loader = "+props.progress)
+        }, [])
+      
+   
+        
+    
+
     return (
         <>
+        
             <div id='about'>
                 <h1 id="about-head">About MySolar</h1>
                 <div className='firstContent'>
@@ -13,7 +35,7 @@ export default function About() {
                         <br />
                         We are in the business of providing smiles to millions through our innovative range of solar products that makes life better.</p>
                     <img src={aboutpic} />
-
+                
                 </div>
                 <div className='secondContent'>
                     <h2>What we do</h2>
@@ -22,6 +44,7 @@ export default function About() {
                         With 7 manufacturing units, more than 28 sales offices in India and presence in over 36 countries, our 6000 employees serve more than 60,000 channel partners and millions of customers. Our motto has always been Customer Delight through Innovation & Passion with the focus on Execution & Team-work. At Luminous, we passionately innovate to make life comfortable and efficient.</p>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/xKxrkht7CpY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
+               
             </div>
 
         </>

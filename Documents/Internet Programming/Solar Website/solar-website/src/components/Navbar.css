@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
 #up{
     list-style: none;
     height: 16vh;
@@ -25,8 +27,7 @@
     width: 80%;
     display: grid;
     border-radius: 10px;
-    /* justify-content: center; */
-   
+ 
 }
 
 
@@ -196,32 +197,74 @@ ul{
 
 /* SHOPITEM CSS */
 
+.fullCard{
+  width: 90vw;
+  overflow: hidden;
+}
+
 .ShopCard{
-    float: left;
+    /* float: left; */
     display: grid;
-    grid-template-areas: 'name name'
-    'price price';
+    justify-content: center;
+    font-family: 'Domine', serif; 
+    background: linear-gradient(45deg, rgb(30, 99, 179), transparent);
+    grid-template-areas: 'name name name name'
+    'price price price price'
+    'brand brand brand brand'
+    'details details details details'
+    'cart Sub Add Buy';
+    /* rgb(30, 99, 179) */
 }
 
 
 .ShopCard #name{
     grid-area: name;
-    font-size: 35px;
+    font-size: 25px;
   
 }
 
 #price{
     grid-area: price;
     font-size: 23px;
-    color: red;
-    float:inline-start;
+    color: rgb(196, 21, 21);
+    font-weight: bold;
+    display: flex;
+    /* float: left; */
 }
 
 #brand{
-    font-size: 20px;
+    grid-area: brand;
+    font-size: 17px;
     font-weight: bold;
+    /* float: left; */
+    display: flex;
+    
 }
 
-
-
+#details{
+    grid-area: details;
+    /* float: left; */
+    display: flex;
+    
+}
+#cartBtn{
+    grid-area: cart;
+    border-radius: 0;
+    
+    
+    
+}
+#subBtn{
+    grid-area: Sub;
+    color: black;
+    
+}
+#addBtn{
+    grid-area: Add;
+    color: black;
+}
+#buyBtn{
+    grid-area: Buy;
+    color: black;
+}
 

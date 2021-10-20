@@ -9,6 +9,8 @@ import {myContext} from '../Context/MyContextFile.js';
 export default function Navbar() {
 
     const tp = useContext(myContext);
+    
+   
 
 
     return (
@@ -30,7 +32,7 @@ export default function Navbar() {
                     <i className="fa fa-2x fa-linkedin"></i>
                 </li>
             </ul>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-center">
                 <div className="container-fluid">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
                         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,9 +61,12 @@ export default function Navbar() {
 
 
                         </ul>
-                        <i className="fa fa-2x fa-shopping-cart" aria-hidden="true"> <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"/>
-                            {tp.cartNum}
-                            </i>
+                       <Link to='/Cart'><i className="fa fa-2x fa-shopping-cart"  aria-hidden="true"> <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"/>
+                       
+                            {localStorage.getItem('cartNum')}
+                            
+                            
+                            </i></Link>
                     </div>
                 </div>
             </nav>

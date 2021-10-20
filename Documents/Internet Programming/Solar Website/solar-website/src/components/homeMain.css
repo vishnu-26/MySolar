@@ -15,6 +15,18 @@
     opacity: 0.5;
 } */
 
+.carousel-caption{
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+    /* margin-bottom: 150px; */
+    /* top: 0; */
+    margin: auto;
+    color: black;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(169, 179, 30), transparent);
+    height: 90px;
+}
+
 .first-info{
     display: flex;
     flex-direction: row;
