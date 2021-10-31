@@ -64,7 +64,7 @@ export default function Shop(props) {
 
 
               return   <div className="row" id='ShopItem'>
-                    <ShopItem id={element._id} name={element.name} img={element.image} brand={element.brand} price={element.price} details={element.details} />
+                    <ShopItem type={element.product_type} id={element._id} name={element.name} img={element.image} brand={element.brand} price={element.price} details={element.details} components={element.components} />
                     </div>
                 })}
 

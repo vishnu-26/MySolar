@@ -5,26 +5,24 @@ export const myContext = createContext();
 
 const AllState = (props)=>{
 
-   
+    
     const [cartNum, setCartNum] = useState(0);
     const [getItems, setGetItems] = useState([]);
-    const [quantity, setQuantity] = useState(1);
+    
     
 
-    const AddtoCart = (id) =>{
-        setCartNum((quantity-1)+(cartNum + 1));
-        localStorage.setItem("cartNum", cartNum);
+    const AddtoCart = (myObj) =>{
+        setCartNum((cartNum + 1)); //Have to Add Quantity in Cart
+        // localStorage.setItem("cartNum", cartNum);
         console.log(cartNum);
-        console.log(id);
-        PutInCart(id);
+        console.log(myObj);
+        PutInCart(myObj);
         }
-
-       
-
-      
-
+        
+    
+  
     return(
-        <myContext.Provider value={{cartNum,setCartNum,getItems,setGetItems,AddtoCart,quantity,setQuantity}}>
+        <myContext.Provider value={{cartNum,setCartNum,getItems,setGetItems,AddtoCart}}>
             {props.children}
         </myContext.Provider>
     )

@@ -102,6 +102,9 @@ ul{
     margin-left: 2.5rem;
     margin-right: 2.5rem;
 }
+#cartSymbol{
+    margin-bottom: 30px;
+}
 
 
 #carouselExampleCaptions img{
@@ -114,13 +117,12 @@ ul{
 /* ABOUT COMPONENT CSS */
 
 #about::before{
-    background: url('./about-header.jpg') no-repeat center/cover;
-    background-color: black;
+    background: url('./about-header.jpg') no-repeat;
     content: ".";
     position: absolute;
     left: 0px;
     width: 100%;
-    height: 20%;
+    height: 100%;
     z-index: -1;
     opacity: 0.7;
 }
@@ -129,16 +131,20 @@ ul{
     margin: 20px 0px;
 }
 
+
+
 #about-head{
     padding: 20px;
     width: 100%;
     font-family: 'Bubblegum Sans', cursive;
     font-size: 75px;   
+    
 }
 
 .firstContent h2{
     text-align: center;
     color: red;
+    margin-top: 300px;
 }
 .firstContent p{
     /* text-align: left; */
@@ -158,7 +164,6 @@ ul{
 }
 
 .secondContent h2{
-    /* font-family: 'Bubblegum Sans', cursive; */
     grid-area: head;
     font-size: 55px;
     /* font-weight: bold; */
@@ -167,8 +172,8 @@ ul{
     height: 85px;
     width: 400px;
     margin: auto;
-    color: red;
-    background-color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background:linear-gradient(rgb(185, 194, 245),rgb(204, 90, 143))
 }
 
 .secondContent p{
@@ -187,6 +192,50 @@ ul{
     margin-top: 80px;
 }
 
+.thirdContent{
+    /* background-image: linear-gradient(black,white); */
+    margin-top: 65px;
+    padding: 15px 0px;
+    
+}
+
+.thirdContent h2{
+    display: contents;
+    border-color: black;
+    color: red;
+    font-weight: bold;
+    font-size: 45px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+/* 
+.thirdContent p::before{
+    background:url(./blackbg.jfif) no-repeat center/cover;
+    content: ".";
+    position: absolute;
+    left: 0px;
+    width: 70%;
+    height: 50%;
+    z-index: -1;
+    opacity: 0.9;
+} */
+
+.thirdContent p{
+    margin: 12px 200px;
+    font-size: 28px;
+    padding: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   
+   border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
 
 /* Shopping CSS */
 #ShopItem:hover{
@@ -200,20 +249,18 @@ ul{
 .fullCard{
   width: 90vw;
   overflow: hidden;
+  
 }
 
 .ShopCard{
-    /* float: left; */
-    display: grid;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
     justify-content: center;
     font-family: 'Domine', serif; 
     background: linear-gradient(45deg, rgb(30, 99, 179), transparent);
-    grid-template-areas: 'name name name name'
-    'price price price price'
-    'brand brand brand brand'
-    'details details details details'
-    'cart Sub Add Buy';
-    /* rgb(30, 99, 179) */
+    
 }
 
 
@@ -245,6 +292,7 @@ ul{
     grid-area: details;
     /* float: left; */
     display: flex;
+    left: 0;
     
 }
 #cartBtn{
@@ -266,5 +314,173 @@ ul{
 #buyBtn{
     grid-area: Buy;
     color: black;
+}
+
+
+
+/* CART Component CSS */
+
+/* .Cart{
+    
+} */
+
+
+
+.singleItem{
+    /* grid-area: items; */
+    width: 370px;
+    border-radius: 23px;
+}
+
+.singleItem b{
+    background-color:aliceblue;
+    border-radius: 10px;
+    margin: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#deleteItem{
+    width: 60px;
+    margin: auto;
+}
+.singleItem .fa-trash{
+    cursor: pointer;
+}
+.singleItem .fa-trash:hover{
+    transform: scale(0.9);
+}
+
+
+
+#price-details{
+    /* grid-area: price; */
+    border: 2px solid black;
+    padding: 15px;
+    width: 400px;
+    height: 350px;
+    margin: 150px auto;
+    background-image: linear-gradient(skyblue,rgb(173, 166, 58));
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+    border-radius: 10px;
+}
+#price-details h2{
+    margin: 0;
+    font-size: 23px;
+    float: left;
+    color: grey;
+}
+
+#finalPrice{
+    font-size: 18px;
+    margin: auto;
+    /* margin-top: 115px; */
+    border-radius: 12px;
+    float: left;
+ 
+}
+
+#finalPrice span{
+    display: flex;
+    left: 0px;
+}
+
+/* CheckOut Page CSS */
+
+#mainContainer{
+    display: grid;
+    grid-template-areas: 'details payment summary';
+    /* border: 2px solid black; */
+    margin: 50px 100px;
+}
+
+#detailsForm{
+    grid-area: details;
+    /* border: 2px solid red; */
+    margin: 10px;
+    padding: 10px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#detailsForm header{
+    background-color: black;
+    color: white;
+    padding: 3px;
+    border-radius: 6px;
+    height: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    width: 430px;
+    font-size: 20px;
+}
+
+#detailsForm label{
+    font-weight: bold;
+    display: flex;
+    float: left;
+    margin: 5px;
+}
+
+#detailsForm input{
+    margin: 5px;
+    margin-bottom: 13px;
+}
+
+#payment{
+    grid-area: payment;
+    /* border: 2px solid blue; */
+    margin: 10px;
+    padding: 10px;
+}
+#payment header{
+    background-color: black;
+    color: white;
+    padding: 3px;
+    border-radius: 6px;
+    height: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    width: 350px;
+    font-size: 20px;
+}
+
+#summary{
+    grid-area: summary;
+    /* border: 2px solid green; */
+    margin: 10px;
+    padding: 10px;
+}
+
+#summary header{
+    background-color: black;
+    color: white;
+    padding: 3px;
+    border-radius: 6px;
+    height: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    width: 350px;
+    font-size: 20px;
+}
+
+#summary #checkoutPrice {
+    border: 2px solid black;
+    padding: 15px;
+    /* width: 400px; */
+    height: 350px;
+    margin: 50px 12px;
+    background-image: linear-gradient(#ffffff,rgb(0, 108, 209));
+   font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    border-radius: 10px;
+  
+}
+#priceBox{
+    float: left;
+}
+
+#payNow-btn{
+    border: none;
+}
+
+#payNow-btn header:hover{
+    transform: scale(0.98);
 }
 

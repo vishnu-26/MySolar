@@ -61,9 +61,9 @@ export default function Navbar() {
 
 
                         </ul>
-                       <Link to='/Cart'><i className="fa fa-2x fa-shopping-cart"  aria-hidden="true"> <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"/>
+                       <Link id='cartSymbol' to='/Cart'><i className="fa fa-2x fa-shopping-cart"  aria-hidden="true"> <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"/>
                        
-                            {localStorage.getItem('cartNum')}
+                           {tp.cartNum}
                             
                             
                             </i></Link>

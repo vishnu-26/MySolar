@@ -125,8 +125,8 @@ export default function HomeMain(props) {
                     </div>
                 </div>
             </div>
-            <h2>Why MySolar?</h2>
-            <h3>Going solar with MySolar has some great perks</h3>
+            <h2 className='h2-homeMain'>Why MySolar?</h2>
+            <h3 className='h3-homeMain'>Going solar with MySolar has some great perks</h3>
             <div className="row row-cols-1 row-cols-md-2 g-4 m-auto">
                 <div className="col" >
                     <div className="card shadow" id="card1">
@@ -166,8 +166,8 @@ export default function HomeMain(props) {
                 </div>
             </div>
             <div>
-                <h2>Live Systems</h2>
-                <h3>MySolar Live Systems all over India.</h3>
+                <h2 className='h2-homeMain'>Live Systems</h2>
+                <h3 className='h3-homeMain'>MySolar Live Systems all over India.</h3>
                 <OwlCarousel options={options} events={events} >
                     <div className="stories shadow" id="story1">
                         <h4>Bank Manager</h4>

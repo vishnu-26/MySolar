@@ -15,6 +15,14 @@
     opacity: 0.5;
 } */
 
+@keyframes caption{
+    0%   {transform: scale(0.5);}
+    /* 25%  {transform: scale(0.5);}
+    50%  {transform: scale(0.5);}
+    75%  {transform: scale(0.5);}
+    100% {transform: scale(0.5);} */
+}
+
 .carousel-caption{
     font-size: 50px;
     font-family:'Times New Roman', Times, serif;
@@ -25,6 +33,7 @@
     font-weight: bold;
     background: linear-gradient(45deg, rgb(169, 179, 30), transparent);
     height: 90px;
+    animation: caption 4s;
 }
 
 .first-info{
@@ -157,12 +166,12 @@
 
 }
 
-h2{
+.h2-homeMain{
     margin-top: 100px;
     font-family: Roboto,Helvetica Neue,sans-serif;
 }
 
-h3{
+.h3-homeMain{
    color: #696969;
    font-family: Roboto,Helvetica Neue,sans-serif;
 }

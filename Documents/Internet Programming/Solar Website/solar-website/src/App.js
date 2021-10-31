@@ -16,6 +16,7 @@ import AllState from './Context/MyContextFile'
 import LoadingBar from 'react-top-loading-bar'
 import Cart from './components/Cart';
 import { myContext } from './Context/MyContextFile';
+import CheckoutPage from './components/CheckoutPage';
 
 
 function App() {
@@ -38,7 +39,9 @@ function App() {
         
       />
         <Switch>
-          
+        <Route path="/checkout">
+           <CheckoutPage progress={progress} setProgress={setProgress} />
+         </Route>
         <Route path="/Cart">
            <Cart progress={progress} setProgress={setProgress} />
          </Route>

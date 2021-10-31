@@ -81,6 +81,7 @@ export function ColorToggleButton(props) {
             value={alignment}
             exclusive
             onChange={handleChange}
+            id='ToggleButtonGroup'
         >
             <ToggleButton value="Total Roof Top Area" onClick={() => { props.setActive('opt1') }} >Total Roof Top Area</ToggleButton>
             <ToggleButton value="Solar Panel Capacity you want to install" onClick={() => { props.setActive('opt2') }}>Solar Panel Capacity you want to install</ToggleButton>
